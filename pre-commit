@@ -16,8 +16,9 @@ tableheader='''
 
 usagenotes='''
 # Usage Notes
+When first cloning this repo ensure you add the pre-commit hook to your .git/hooks folder.\
 Whenever replacing the pre-commit hook ensure the file extension is removed.\
-Use requirements.txt to check for any changes for this file.
+Use requirements.txt to check for any changes for this file.\
 '''
 
 tests=[test for test in os.listdir('.') if os.path.isdir(test)]
@@ -39,7 +40,7 @@ for t in tests:
         readme.write('|'+lang+'|'+str(b)+'||\n')
     readme.write('\n\n')
 
-readme.write()
+readme.write(usagenotes)
 readme.close()
 
 #Add the readme changes to the current commit because Git is drunk as hell and doesn't auto-add during hooks
