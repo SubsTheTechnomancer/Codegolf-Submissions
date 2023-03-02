@@ -1,0 +1,2 @@
+#include<cstdio>
+int i,j;int main(){char*a[]={"First","Second","Third","Four","Fif","Six","Seven","Eigh","Nin","Ten","Eleven","Twelf","Twelve Drummers Drumm"," Pipers Pip"," Lords-a-Leap","e Ladies Danc","t Maids-a-Milk"," Swans-a-Swimm"," Geese-a-Lay","Five Gold Rings,","Four Calling Birds,","Three French Hens,","Two Turtle Doves, and","A Partridge in a Pear Tree.\n"};for(;i<12&&printf("On the %s%s day of Christmas\nMy true love sent to me\n",a[i],i>2?"th":"");)for(j=23-i++;j<24;)printf("%s%s%s\n",j-12&&19>j?a[23-j]:"",a[j],j++<19?"ing,":"");}

@@ -30,6 +30,7 @@ for t in tests:
             f=open(t+'/'+lang+'/'+files[0],'r')
             b=len(f.read())
             f.close()
-        readme.write('|'+lang+'|'+b+'||')
+        readme.write('|'+lang+'|'+str(b)+'||\n')
+    readme.write('\n\n')
 
 readme.close()

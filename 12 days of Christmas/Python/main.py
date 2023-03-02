@@ -1,0 +1,2 @@
+n='First+Second+Third+Four+Fif+Six+Seven+Eigh+Nin+Ten+Eleven+Twelf+Twelve Drummers Drumm^Eleven Pipers Pip^Ten Lords-a-Leap^Nine Ladies Danc^Eight Maids-a-Milk^Seven Swans-a-Swimm^Six Geese-a-Lay^Five Gold Rings,+Four Calling Birds,+Three French Hens,+Two Turtle Doves, and+A Partridge in a Pear Tree.\n'.replace('^','ing,+').split('+')
+for i in range(12):print('On the',n[i]+('th','')[i<3],'day of Christmas\nMy true love sent to me\n'+'\n'.join(n[~i:]))
