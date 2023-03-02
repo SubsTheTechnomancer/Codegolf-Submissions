@@ -5,3 +5,11 @@ All submissions I have made to [Code Golf](https://code.golf/) in various langua
 ## 12 days of Christmas
 | Language | Bytes | Rank (in bytes)
 |:---:|:---:|:---:|
+|C|524||
+|C#|486||
+|C++|550||
+|Java|561||
+|Lua|508||
+|Python|455||
+
+
