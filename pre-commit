@@ -1,0 +1,9 @@
+#!/usr/bin/env python
+
+#This file is also include in .git/hooks
+import os
+import re
+
+readme = open('README.md','a')
+readme.write('Test pre-commit hook message')
+readme.close()
