@@ -10,8 +10,9 @@ All submissions I have made to [Code Golf](https://code.golf/) in various langua
 |C++|550||
 |Java|561||
 |JavaScript|455||
-|Lua|508||
+|Lua|500||
 |Python|455||
 |Ruby|442||
+|Rust|503||
 
 
