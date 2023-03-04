@@ -23,6 +23,7 @@ Use requirements.txt to check for any changes for this file.\
 
 tests=[test for test in os.listdir('.') if os.path.isdir(test)]
 tests.remove('.git')
+tests.remove('.elixir_ls')
 
 readme = open('README.md','w')
 readme.write(inittext)

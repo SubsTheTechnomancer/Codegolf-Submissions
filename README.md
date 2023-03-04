@@ -8,6 +8,7 @@ All submissions I have made to [Code Golf](https://code.golf/) in various langua
 |C|524||
 |C#|486||
 |C++|550||
+|Elixir|498||
 |Java|561||
 |JavaScript|455||
 |Lua|508||
