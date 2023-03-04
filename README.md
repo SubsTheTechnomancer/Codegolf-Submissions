@@ -11,10 +11,9 @@ All submissions I have made to [Code Golf](https://code.golf/) in various langua
 |Elixir|498||
 |Java|561||
 |JavaScript|455||
-|Lua|508||
+|Lua|500||
 |Python|455||
+|Ruby|442||
+|Rust|503||
 
 
-
-# Usage Notes
-When first cloning this repo ensure you add the pre-commit hook to your .git/hooks folder.Whenever replacing the pre-commit hook ensure the file extension is removed.Use requirements.txt to check for any changes for this file.
