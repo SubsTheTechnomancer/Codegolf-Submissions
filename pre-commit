@@ -16,9 +16,9 @@ tableheader='''
 
 usagenotes='''
 # Usage Notes
-When first cloning this repo ensure you add the pre-commit hook to your .git/hooks folder.\ \n
-Whenever replacing the pre-commit hook ensure the file extension is removed.\ \n
-Use requirements.txt to check for any changes for this file.\ \n
+When first cloning this repo ensure you add the pre-commit hook to your .git/hooks folder.<br>
+Whenever replacing the pre-commit hook ensure the file extension is removed.<br>
+Use requirements.txt to check for any changes for this file.<br>
 '''
 
 tests=[test for test in os.listdir('.') if os.path.isdir(test)]
