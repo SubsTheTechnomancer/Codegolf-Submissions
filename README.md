@@ -8,7 +8,7 @@ All submissions I have made to [Code Golf](https://code.golf/) in various langua
 |C|524||
 |C#|486||
 |C++|550||
-|Elixir|498||
+|Elixir|496||
 |Java|561||
 |JavaScript|455||
 |Lua|500||
@@ -19,4 +19,6 @@ All submissions I have made to [Code Golf](https://code.golf/) in various langua
 
 
 # Usage Notes
-When first cloning this repo ensure you add the pre-commit hook to your .git/hooks folder.Whenever replacing the pre-commit hook ensure the file extension is removed.Use requirements.txt to check for any changes for this file.
+When first cloning this repo ensure you add the pre-commit hook to your .git/hooks folder.<br>
+Whenever replacing the pre-commit hook ensure the file extension is removed.<br>
+Use requirements.txt to check for any changes for this file.<br>
