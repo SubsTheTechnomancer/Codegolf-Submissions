@@ -19,10 +19,12 @@ usagenotes='''
 When first cloning this repo ensure you add the pre-commit hook to your .git/hooks folder.<br>
 Whenever replacing the pre-commit hook ensure the file extension is removed.<br>
 Use requirements.txt to check for any changes for this file.<br>
+Use the command `git config core.hooksPath hooks` to assign `hooks\pre-commit` as a hook of this repository (otherwise this README will break!)<br>
 '''
 
 tests=[test for test in os.listdir('.') if os.path.isdir(test)]
 tests.remove('.git')
+tests.remove('hooks')
 if('.elixir_ls' in tests):
     tests.remove('.elixir_ls')
 
