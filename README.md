@@ -9,6 +9,7 @@ All submissions I have made to [Code Golf](https://code.golf/) in various langua
 |C#|486||
 |C++|550||
 |Elixir|494||
+|Fortran|573||
 |Go|517||
 |Java|561||
 |JavaScript|455||
