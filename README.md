@@ -13,6 +13,7 @@ All submissions I have made to [Code Golf](https://code.golf/) in various langua
 |Go|517||
 |Java|561||
 |JavaScript|455||
+|K|434||
 |Lua|500||
 |Python|455||
 |Ruby|442||
