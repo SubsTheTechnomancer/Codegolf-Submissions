@@ -19,9 +19,7 @@ All submissions I have made to [Code Golf](https://code.golf/) in various langua
 |Raku|452||
 |Ruby|442||
 |Rust|503||
-
-
-
+<br>![12 days of Christmas][12 days of Christmas.png]<br>
 # Usage Notes
 When first cloning this repo ensure you add the pre-commit hook to your .git/hooks folder.<br>
 Whenever replacing the pre-commit hook ensure the file extension is removed.<br>

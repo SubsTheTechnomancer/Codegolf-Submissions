@@ -1,7 +1,11 @@
 #!/usr/bin/env python
-#This file is also included in .git/hooks
+
 import os
 from git import Repo
+import matplotlib.pyplot as plt
+
+#Default color settings for the bar chart
+plt.rc_context({'axes.edgecolor':'#FFFFF0', 'xtick.color':'#FFFFF0', 'ytick.color':'#FFFFF0', 'figure.facecolor':'black'})
 
 inittext='''
 # Codegolf-Submissions
@@ -22,6 +26,18 @@ Use requirements.txt to check for any changes for this file.<br>
 Use the command `git config core.hooksPath hooks` to assign `hooks\pre-commit` as a hook of this repository (otherwise this README will break!)<br>
 '''
 
+def drawGraph(tdata):
+    plt.figure(facecolor='Black')
+    plt.bar(tdata.keys(),tdata.values(),color='#FFFFF0')
+    plt.xlabel("Language",color='#FFFFF0')
+    plt.ylabel("Char count",color='#FFFFF0')
+    plt.title(t,color='#FFFFF0')
+    ax=plt.axes()
+    ax.spines['top'].set_color('Black')
+    ax.spines['right'].set_color('Black')
+    ax.set_facecolor(color='Black')
+    plt.savefig(f"{t}.png",transparent=True)        #Save as a recognizable name for embedding
+
 tests=[test for test in os.listdir('.') if os.path.isdir(test)]
 tests.remove('.git')
 tests.remove('hooks')
@@ -32,6 +48,7 @@ readme = open('README.md','w')
 readme.write(inittext)
 
 for t in tests:
+    tdata={}                                        #Dictionary to store language data
     readme.write('## '+t)
     readme.write(tableheader)
     for lang in os.listdir(t):
@@ -39,10 +56,14 @@ for t in tests:
         files=os.listdir(t+'/'+lang)
         if len(files)==1:
             f=open(t+'/'+lang+'/'+files[0],'r')
-            b=len(f.read())
+            b=len(f.read())                         #Get number of chars in each language
             f.close()
-        readme.write('|'+lang+'|'+str(b)+'||\n')
-    readme.write('\n\n')
+        readme.write('|'+lang+'|'+str(b)+'||\n')    #Add it to the markdown table
+        tdata[lang]=b                               #..And to the dictionary
+
+    readme.write('<br>')
+    drawGraph(tdata)                                #Draww the bar graph with matplotlib
+    readme.write(f'![{t}][{t}.png]<br>')
 
 readme.write(usagenotes)
 readme.close()
