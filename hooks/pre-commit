@@ -32,15 +32,18 @@ def drawGraph(tdata):
     plt.xlabel("Language",color='#FFFFF0')
     plt.ylabel("Char count",color='#FFFFF0')
     plt.title(t,color='#FFFFF0')
+    plt.xticks(rotation=45)
+    plt.tight_layout()
     ax=plt.axes()
     ax.spines['top'].set_color('Black')
     ax.spines['right'].set_color('Black')
     ax.set_facecolor(color='Black')
-    plt.savefig(f"{t}.png",transparent=True)        #Save as a recognizable name for embedding
+    plt.savefig(f"charts/{t}.png",bbox_inches='tight',transparent=True)        #Save as a recognizable name for embedding
 
 tests=[test for test in os.listdir('.') if os.path.isdir(test)]
 tests.remove('.git')
 tests.remove('hooks')
+tests.remove('charts')
 if('.elixir_ls' in tests):
     tests.remove('.elixir_ls')
 
@@ -63,7 +66,7 @@ for t in tests:
 
     readme.write('<br>')
     drawGraph(tdata)                                #Draww the bar graph with matplotlib
-    readme.write(f'![{t}][{t}.png]<br>')
+    readme.write(f'![{t}][charts/{t}.png]<br>')
 
 readme.write(usagenotes)
 readme.close()
