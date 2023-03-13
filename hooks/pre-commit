@@ -66,7 +66,7 @@ for t in tests:
 
     readme.write('\n\n')
     drawGraph(tdata,t)                                #Draww the bar graph with matplotlib
-    readme.write(f"![{t}](charts\\{t.replace(' ','_',-1)}.png)\n\n")
+    readme.write(f"![{t}](charts/{t.replace(' ','_',-1)}.png)\n\n")
 
 readme.write(usagenotes)
 readme.close()
