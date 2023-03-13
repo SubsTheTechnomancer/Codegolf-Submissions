@@ -21,7 +21,7 @@ All submissions I have made to [Code Golf](https://code.golf/) in various langua
 |Rust|503||
 
 
-![12 days of Christmas][charts/12 days of Christmas.png]
+![12 days of Christmas](charts\12_days_of_Christmas.png)
 
 
 # Usage Notes

@@ -26,7 +26,7 @@ Use requirements.txt to check for any changes for this file.<br>
 Use the command `git config core.hooksPath hooks` to assign `hooks\pre-commit` as a hook of this repository (otherwise this README will break!)<br>
 '''
 
-def drawGraph(tdata):
+def drawGraph(tdata,t):
     plt.figure(facecolor='Black')
     plt.bar(tdata.keys(),tdata.values(),color='#FFFFF0')
     plt.xlabel("Language",color='#FFFFF0')
@@ -38,7 +38,7 @@ def drawGraph(tdata):
     ax.spines['top'].set_color('Black')
     ax.spines['right'].set_color('Black')
     ax.set_facecolor(color='Black')
-    plt.savefig(f"charts/{t}.png",bbox_inches='tight',transparent=True)        #Save as a recognizable name for embedding
+    plt.savefig(f"charts/{t.replace(' ','_',-1)}.png",bbox_inches='tight',transparent=True)        #Save as a recognizable name for embedding
 
 tests=[test for test in os.listdir('.') if os.path.isdir(test)]
 tests.remove('.git')
@@ -65,8 +65,8 @@ for t in tests:
         tdata[lang]=b                               #..And to the dictionary
 
     readme.write('\n\n')
-    drawGraph(tdata)                                #Draww the bar graph with matplotlib
-    readme.write(f'![{t}][charts/{t}.png]\n\n')
+    drawGraph(tdata,t)                                #Draww the bar graph with matplotlib
+    readme.write(f"![{t}](charts\\{t.replace(' ','_',-1)}.png)\n\n")
 
 readme.write(usagenotes)
 readme.close()
