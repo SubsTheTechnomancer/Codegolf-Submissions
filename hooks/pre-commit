@@ -64,9 +64,9 @@ for t in tests:
         readme.write('|'+lang+'|'+str(b)+'||\n')    #Add it to the markdown table
         tdata[lang]=b                               #..And to the dictionary
 
-    readme.write('<br>')
+    readme.write('\n\n')
     drawGraph(tdata)                                #Draww the bar graph with matplotlib
-    readme.write(f'![{t}][charts/{t}.png]<br>')
+    readme.write(f'![{t}][charts/{t}.png]\n\n')
 
 readme.write(usagenotes)
 readme.close()
