@@ -3,6 +3,9 @@
 import os
 from git import Repo
 import matplotlib.pyplot as plt
+import urllib
+from urllib.request import urlopen
+import re
 
 #Default color settings for the bar chart
 plt.rc_context({'axes.edgecolor':'#FFFFF0', 'xtick.color':'#FFFFF0', 'ytick.color':'#FFFFF0', 'figure.facecolor':'black'})
@@ -25,6 +28,7 @@ Use the command `git config core.hooksPath hooks` to assign `hooks\pre-commit` a
 '''
 
 def drawGraph(tdata,t):
+    #Draw bar graph with specific color codes
     plt.figure(facecolor='Black')
     plt.bar(tdata.keys(),tdata.values(),color='#FFFFF0')
     plt.xlabel("Language",color='#FFFFF0')
@@ -36,7 +40,41 @@ def drawGraph(tdata,t):
     ax.spines['top'].set_color('Black')
     ax.spines['right'].set_color('Black')
     ax.set_facecolor(color='Black')
+
     plt.savefig(f"charts/{t.replace(' ','_',-1)}.png",bbox_inches='tight',transparent=True)        #Save as a recognizable name for embedding
+
+def getRank(test,lang):
+    pg=1
+    rank=[]
+
+    #Replace whitespace and capitals in test name
+    test = re.sub(r' ','-',test.lower())
+
+    #Replace special chars in lang name
+    lang = re.sub(r'\+','p',lang.lower())
+    lang = re.sub(r'\#','-sharp',lang)
+    lang = re.sub(r'><>','fish',lang)
+
+    #Loop through all rank pages
+    while(pg<11):
+        try:
+            page = urlopen(f'https://code.golf/rankings/holes/{test}/{lang}/bytes?page={pg}')
+        except urllib.error.HTTPError:
+            break
+
+        html = page.read().decode('utf-8')
+
+        rank=re.findall(r'<td>([0-9]+)<sup>.*</sup>\n +<td>\n +<a href=\"/golfers/SubsTheTechnomancer',html)
+
+        if(len(rank)==1):
+            break
+
+        pg+=1
+
+    if(rank==[]):
+        return 'NA'
+    else:
+        return rank[0]
 
 tests=[test for test in os.listdir('.') if os.path.isdir(test)]
 tests.remove('.git')
@@ -49,7 +87,7 @@ readme = open('README.md','w')
 readme.write(inittext)
 
 for t in tests:
-    tdata={}                                        #Dictionary to store language data
+    tdata={}                                                            #Dictionary to store language data
     readme.write('## '+t)
     readme.write(tableheader)
     for lang in os.listdir(t):
@@ -57,13 +95,14 @@ for t in tests:
         files=os.listdir(t+'/'+lang)
         if len(files)==1:
             f=open(t+'/'+lang+'/'+files[0],'r')
-            b=len(f.read())                         #Get number of chars in each language
+            b=len(f.read())                                             #Get number of chars in each language
             f.close()
-        readme.write('|'+lang+'|'+str(b)+'||\n')    #Add it to the markdown table
-        tdata[lang]=b                               #..And to the dictionary
+        
+        readme.write('|'+lang+'|'+str(b)+'|'+getRank(t,lang)+'|\n')     #Add it to the markdown table
+        tdata[lang]=b                                                   #..And to the dictionary
 
     readme.write('\n\n')
-    drawGraph(tdata,t)                                #Draww the bar graph with matplotlib
+    drawGraph(tdata,t)                                                  #Draww the bar graph with matplotlib
     readme.write(f"![{t}](charts/{t.replace(' ','_',-1)}.png)\n\n")
 
 readme.write(usagenotes)

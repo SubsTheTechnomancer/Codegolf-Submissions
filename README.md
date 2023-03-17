@@ -5,20 +5,20 @@ All submissions I have made to [Code Golf](https://code.golf/) in various langua
 ## 12 days of Christmas
 | Language | Bytes | Rank (in bytes)
 |:---:|:---:|:---:|
-|C|524||
-|C#|486||
-|C++|550||
-|Elixir|494||
-|Fortran|573||
-|Go|517||
-|Java|561||
-|JavaScript|455||
-|K|434||
-|Lua|500||
-|Python|455||
-|Raku|452||
-|Ruby|442||
-|Rust|503||
+|C|524|27|
+|C#|486|17|
+|C++|550|13|
+|Elixir|494|5|
+|Fortran|573|9|
+|Go|517|8|
+|Java|561|21|
+|JavaScript|455|29|
+|K|434|7|
+|Lua|500|6|
+|Python|455|34|
+|Raku|452|8|
+|Ruby|442|23|
+|Rust|503|8|
 
 
 ![12 days of Christmas](charts/12_days_of_Christmas.png)
