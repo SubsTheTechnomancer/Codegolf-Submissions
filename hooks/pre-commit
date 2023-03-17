@@ -30,8 +30,6 @@ def drawGraph(tdata,t):
 
     plt.bar(tdata.keys(),tdata.values())
     ax=plt.axes()
-    ax.xaxis.set_ticklabels([])
-    ax.yaxis.set_ticklabels([])
     ax.set_xlabel("Language")
     ax.set_ylabel("Char count")
     plt.title(t)
