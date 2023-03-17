@@ -28,7 +28,7 @@ def drawGraph(tdata,t):
     #Draw bar graph with specific color codes
     plt.style.use('dark_background')
 
-    plt.bar(tdata.keys(),tdata.values())
+    plt.bar(x=tdata.keys(),height=tdata.values())
     ax=plt.axes()
     ax.set_xlabel("Language")
     ax.set_ylabel("Char count")
