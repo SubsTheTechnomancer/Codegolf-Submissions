@@ -27,3 +27,4 @@ All submissions I have made to [Code Golf](https://code.golf/) in various langua
 # Usage Notes
 Use requirements.txt to check for any changes for this file.<br>
 Use the command `git config core.hooksPath hooks` to assign `hooks\pre-commit` as a hook of this repository (otherwise this README will break!)<br>
+Don't commit too fast or too many times at once since the hooks web scrap for rank (which might ratelimit your IP).<br>
