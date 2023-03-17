@@ -39,6 +39,8 @@ def drawGraph(tdata,t):
     ax=plt.axes()
     ax.spines['top'].set_color('Black')
     ax.spines['right'].set_color('Black')
+    ax.spines['left'].set_color('#FFFFF0')
+    ax.spines['bottom'].set_color('#FFFFF0')
     ax.set_facecolor(color='Black')
 
     plt.savefig(f"charts/{t.replace(' ','_',-1)}.png",bbox_inches='tight',transparent=True)        #Save as a recognizable name for embedding
