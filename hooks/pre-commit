@@ -7,9 +7,6 @@ import urllib
 from urllib.request import urlopen
 import re
 
-#Default color settings for the bar chart
-plt.rc_context({'axes.edgecolor':'#FFFFF0', 'xtick.color':'#FFFFF0', 'ytick.color':'#FFFFF0', 'figure.facecolor':'black'})
-
 inittext='''
 # Codegolf-Submissions
 All submissions I have made to [Code Golf](https://code.golf/) in various languages. Note that I do not use encoding tricks in my submissions so my ranking is only concerned with bytes (which will be identical to chars).
@@ -29,19 +26,17 @@ Use the command `git config core.hooksPath hooks` to assign `hooks\pre-commit` a
 
 def drawGraph(tdata,t):
     #Draw bar graph with specific color codes
-    plt.figure(facecolor='Black')
-    plt.bar(tdata.keys(),tdata.values(),color='#FFFFF0')
-    plt.xlabel("Language",color='#FFFFF0')
-    plt.ylabel("Char count",color='#FFFFF0')
-    plt.title(t,color='#FFFFF0')
+    plt.style.use('dark_background')
+
+    plt.bar(tdata.keys(),tdata.values())
+    ax=plt.axes()
+    ax.xaxis.set_ticklabels([])
+    ax.yaxis.set_ticklabels([])
+    plt.xlabel("Language")
+    plt.ylabel("Char count")
+    plt.title(t)
     plt.xticks(rotation=45)
     plt.tight_layout()
-    ax=plt.axes()
-    ax.spines['top'].set_color('Black')
-    ax.spines['right'].set_color('Black')
-    ax.spines['left'].set_color('#FFFFF0')
-    ax.spines['bottom'].set_color('#FFFFF0')
-    ax.set_facecolor(color='Black')
 
     plt.savefig(f"charts/{t.replace(' ','_',-1)}.png",bbox_inches='tight',transparent=True)        #Save as a recognizable name for embedding
 
