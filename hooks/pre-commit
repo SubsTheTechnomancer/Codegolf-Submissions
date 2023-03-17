@@ -32,10 +32,10 @@ def drawGraph(tdata,t):
     ax=plt.axes()
     ax.xaxis.set_ticklabels([])
     ax.yaxis.set_ticklabels([])
-    plt.xlabel("Language")
-    plt.ylabel("Char count")
+    ax.set_xlabel("Language")
+    ax.set_ylabel("Char count")
     plt.title(t)
-    plt.xticks(rotation=45)
+    plt.setp(ax.get_xticklabels(),rotation=45,ha='right')
     plt.tight_layout()
 
     plt.savefig(f"charts/{t.replace(' ','_',-1)}.png",bbox_inches='tight',transparent=True)        #Save as a recognizable name for embedding
