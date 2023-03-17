@@ -28,12 +28,10 @@ def drawGraph(tdata,t):
     #Draw bar graph with specific color codes
     plt.style.use('dark_background')
 
-    plt.bar(x=tdata.keys(),height=tdata.values())
-    ax=plt.axes()
-    ax.set_xlabel("Language")
-    ax.set_ylabel("Char count")
-    plt.title(t)
-    plt.setp(ax.get_xticklabels(),rotation=45,ha='right')
+    plt.bar(tdata.keys(),tdata.values())
+    plt.xlabel('Lang')
+    plt.ylabel('Char count')
+    plt.xticks(rotation=45)
     plt.tight_layout()
 
     plt.savefig(f"charts/{t.replace(' ','_',-1)}.png",bbox_inches='tight',transparent=True)        #Save as a recognizable name for embedding
