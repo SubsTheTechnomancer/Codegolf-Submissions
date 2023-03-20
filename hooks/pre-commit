@@ -73,7 +73,7 @@ def getRank(test,lang):
 
         html = page.read().decode('utf-8')
 
-        rank=re.findall(rf'<td>([0-9]+)<sup>.*</sup>\n +<td>\n +<a href=\"/golfers/{username}',html)
+        rank=re.findall(fr'<td>([0-9]+)<sup>.*</sup>\n +<td>\n +<a href=\"/golfers/{username}',html)
 
         if(len(rank)==1):
             break
