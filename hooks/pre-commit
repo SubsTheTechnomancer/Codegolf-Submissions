@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 import urllib
 from urllib.request import urlopen
 import re
+from dotenv import load_dotenv
 
 inittext='''
 # Codegolf-Submissions
@@ -19,11 +20,25 @@ tableheader='''
 '''
 
 usagenotes='''
-# Usage Notes
-Use requirements.txt to check for any changes for this file.<br>
+# Installation notes
+You can use this repository for your own code.golf exploits as well!<br>
+Clone/Fork this repository into your local system. Use requirements.txt to check for any changes for this file.<br>
 Use the command `git config core.hooksPath hooks` to assign `hooks\pre-commit` as a hook of this repository (otherwise this README will break!)<br>
+At this point, you can replace all the various hole folders with your own submissions. The format in which they must be stored is `<Hole name>/<Language name>/<whatever file>`.
+This will ensure the README updates accurately.<br>
+It is important to replace my username in `config.env` with your own github username so it can pull your hole ranks.<br>
 Don't commit too fast or too many times at once since the hooks web scrap for rank (which might ratelimit your IP).<br>
 '''
+
+contribution='''
+# Contribution
+If you wish to contribute, please first create an relevant issue. If a PR is required, it will be informed to you.<br>
+Ensure you mark all your local hole changes as untracked in your branch/fork in case you are to make a PR, so that there is no merge conflicts, and that `config.env` is similarly
+untracked.
+'''
+
+load_dotenv('config.env')
+username=os.getenv('USERNAME')
 
 def drawGraph(tdata,t):
     #Draw bar graph with specific color codes
@@ -58,7 +73,7 @@ def getRank(test,lang):
 
         html = page.read().decode('utf-8')
 
-        rank=re.findall(r'<td>([0-9]+)<sup>.*</sup>\n +<td>\n +<a href=\"/golfers/SubsTheTechnomancer',html)
+        rank=re.findall(rf'<td>([0-9]+)<sup>.*</sup>\n +<td>\n +<a href=\"/golfers/{username}',html)
 
         if(len(rank)==1):
             break
@@ -100,6 +115,7 @@ for t in tests:
     readme.write(f"![{t}](charts/{t.replace(' ','_',-1)}.png)\n\n")
 
 readme.write(usagenotes)
+readme.write(contribution)
 readme.close()
 
 #Add the readme changes to the current commit because Git is drunk as hell and doesn't auto-add during hooks
