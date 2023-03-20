@@ -30,7 +30,7 @@ Clone/Fork this repository into your local system. Use requirements.txt to check
 Use the command `git config core.hooksPath hooks` to assign `hooks\pre-commit` as a hook of this repository (otherwise this README will break!)<br>
 At this point, you can replace all the various hole folders with your own submissions. The format in which they must be stored is `<Hole name>/<Language name>/<whatever file>`.
 This will ensure the README updates accurately.<br>
-It is important to replace my username in `config.env` with your own github username so it can pull your hole ranks.<br>
+It is important to replace my git username in `config.env` with your own github username so it can pull your hole ranks.<br>
 Don't commit too fast or too many times at once since the hooks web scrap for rank (which might ratelimit your IP).<br>
 
 # Contribution
