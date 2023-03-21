@@ -15,6 +15,7 @@ All submissions I have made to [Code Golf](https://code.golf/) in various langua
 |JavaScript|455|29|
 |K|434|7|
 |Lua|500|6|
+|Perl|446|14|
 |Python|455|34|
 |Raku|452|8|
 |Ruby|442|23|
