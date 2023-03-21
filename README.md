@@ -11,6 +11,7 @@ All submissions I have made to [Code Golf](https://code.golf/) in various langua
 |Elixir|494|5|
 |Fortran|573|9|
 |Go|517|8|
+|GolfScript|431|6|
 |Java|561|21|
 |JavaScript|455|29|
 |K|434|7|
