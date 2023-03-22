@@ -25,6 +25,14 @@ All submissions I have made to [Code Golf](https://code.golf/) in various langua
 
 ![12 days of Christmas](charts/12_days_of_Christmas.png)
 
+## 99 Bottles of Beer
+| Language | Bytes | Rank (in bytes)
+|:---:|:---:|:---:|
+|Python|292|195|
+
+
+![99 Bottles of Beer](charts/99_Bottles_of_Beer.png)
+
 
 # Installation notes
 You can use this repository for your own code.golf exploits as well!<br>

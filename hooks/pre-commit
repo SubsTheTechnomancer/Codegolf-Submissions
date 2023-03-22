@@ -51,6 +51,7 @@ def drawGraph(tdata,t):
     plt.tight_layout()
 
     plt.savefig(f"charts/{t.replace(' ','_',-1)}.png",bbox_inches='tight',transparent=True)        #Save as a recognizable name for embedding
+    plt.clf()
 
 def getRank(test,lang):
     pg=1
