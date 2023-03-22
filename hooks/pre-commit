@@ -57,8 +57,9 @@ def getRank(test,lang):
     pg=1
     rank=[]
 
-    #Replace whitespace and capitals in test name
+    #Replace whitespace and capitals and additional characters in test name
     test = re.sub(r' ','-',test.lower())
+    test = re.sub(r'(|)','',test)
 
     #Replace special chars in lang name
     lang = re.sub(r'\+','p',lang.lower())
