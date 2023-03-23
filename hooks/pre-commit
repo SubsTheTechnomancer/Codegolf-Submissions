@@ -7,6 +7,7 @@ import urllib
 from urllib.request import urlopen
 import re
 from dotenv import load_dotenv
+import csv
 
 inittext='''
 # Codegolf-Submissions
@@ -97,24 +98,37 @@ if('.elixir_ls' in tests):
 readme = open('README.md','w')
 readme.write(inittext)
 
+alldata=[]                                                              #List of dictionaries storing all codegolf data
+fields=['Hole','Bytes','Rank']
+
 for t in tests:
-    tdata={}                                                            #Dictionary to store language data
+    tdata={}                                                            #Dictionary to store language bytes
+    trank={}                                                            #Dictionary to store language ranks
     readme.write('## '+t)
     readme.write(tableheader)
     for lang in os.listdir(t):
         b=''
         files=os.listdir(t+'/'+lang)
+        
         if len(files)==1:
             f=open(t+'/'+lang+'/'+files[0],'r')
             b=len(f.read())                                             #Get number of chars in each language
             f.close()
         
-        readme.write('|'+lang+'|'+str(b)+'|'+getRank(t,lang)+'|\n')     #Add it to the markdown table
-        tdata[lang]=b                                                   #..And to the dictionary
+        rank=getRank(t,lang)
+        readme.write('|'+lang+'|'+str(b)+'|'+rank+'|\n')                #Add it to the markdown table
+        tdata[lang]=b                                                   #..And to the dictionaries
+        trank[lang]=rank                                     
 
     readme.write('\n\n')
-    drawGraph(tdata,t)                                                  #Draww the bar graph with matplotlib
+    drawGraph(tdata,t)                                                  #Draw the bar graph with matplotlib
     readme.write(f"![{t}](charts/{t.replace(' ','_',-1)}.png)\n\n")
+    alldata.append({'Hole':t,'Bytes':tdata,'Rank':trank})               #Append hole data to main list
+
+with open('golfdata.csv','w') as datafile:
+    writer = csv.DictWriter(datafile,fieldnames=fields)
+    writer.writeheader()
+    writer.writerows(alldata)
 
 readme.write(usagenotes)
 readme.write(contribution)

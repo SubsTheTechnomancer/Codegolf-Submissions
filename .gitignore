@@ -1,4 +1,5 @@
 *.elixir_ls
 *.dets
 *.manifest
+golfdata.csv
 test.py
