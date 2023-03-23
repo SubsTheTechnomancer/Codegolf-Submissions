@@ -125,7 +125,7 @@ for t in tests:
     readme.write(f"![{t}](charts/{t.replace(' ','_',-1)}.png)\n\n")
     alldata.append({'Hole':t,'Bytes':tdata,'Rank':trank})               #Append hole data to main list
 
-with open('golfdata.csv','w') as datafile:
+with open('golfdata.csv','w',newline='') as datafile:                   #TODO: Windows behaviour requires newline='', but this might cause Linux builds to break the csv
     writer = csv.DictWriter(datafile,fieldnames=fields)
     writer.writeheader()
     writer.writerows(alldata)
