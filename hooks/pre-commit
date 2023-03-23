@@ -92,6 +92,7 @@ tests=[test for test in os.listdir('.') if os.path.isdir(test)]
 tests.remove('.git')
 tests.remove('hooks')
 tests.remove('charts')
+tests.remove('docs')
 if('.elixir_ls' in tests):
     tests.remove('.elixir_ls')
 
