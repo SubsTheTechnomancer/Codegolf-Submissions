@@ -1,7 +1,16 @@
 
-# Codegolf-Submissions
+# Codegolf-Submissions 
+[![Deploy static content to Pages](https://github.com/SubsTheTechnomancer/Codegolf-Submissions/actions/workflows/static.yml/badge.svg?branch=docs)](https://github.com/SubsTheTechnomancer/Codegolf-Submissions/actions/workflows/static.yml)
 All submissions I have made to [Code Golf](https://code.golf/) in various languages. Note that I do not use encoding tricks in my submissions so my ranking is only concerned with bytes (which will be identical to chars).
 # Currently In Progress:
+## .github
+| Language | Bytes | Rank (in bytes)
+|:---:|:---:|:---:|
+|workflows|1219|NA|
+
+
+![.github](charts/.github.png)
+
 ## 12 days of Christmas
 | Language | Bytes | Rank (in bytes)
 |:---:|:---:|:---:|
