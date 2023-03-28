@@ -13,6 +13,7 @@ All submissions I have made to [Code Golf](https://code.golf/) in various langua
 |Fortran|573|9|
 |Go|517|8|
 |GolfScript|431|6|
+|Haskell|529|23|
 |Java|561|21|
 |JavaScript|455|29|
 |K|434|7|
@@ -29,7 +30,7 @@ All submissions I have made to [Code Golf](https://code.golf/) in various langua
 ## 99 Bottles of Beer
 | Language | Bytes | Rank (in bytes)
 |:---:|:---:|:---:|
-|Python|292|195|
+|Python|292|197|
 
 
 ![99 Bottles of Beer](charts/99_Bottles_of_Beer.png)
